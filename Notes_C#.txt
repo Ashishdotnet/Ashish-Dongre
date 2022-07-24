@@ -1,0 +1,299 @@
+variables in c#
+
+Defination :- Variables are used to store data values
+
+example:-(Integer Data Types Are As Follows :- int a=10; int A=10; int ar=10; int Ar=10;)
+	   (String data Types Are As Follows :- string FullName="Ashish Dongre";)
+         (String Cocatinations :- String FirstName = "Ashish";
+					    String LastName = "Dongre";
+			String FullName = FirstName+LastName;
+			Console.WriteLine("Your FullName Is :"+FullName);
+         (You Can Also Write Above Like This )
+	   Console.WriteLine(FirstName+LastName);
+You Can Also Declare variable Without Assigning Value 
+Example :- Int A;
+           A=10;
+           console.Writeline(A);
+
+Types Of DataTypes In C# Are As Follows:-
+(Integer,String,Double,float,Char,Boolean)
+Integer:- Datatype That Store Whole Numbers 
+String :- Datatype That Allows You To Store String Values Like Name,Place Name within 
+          Strings comes In The "Ashish" Double Qutes.
+Double :- Datatype That Allows You To Store Values That Comes In Decimal Values 
+          (Ex :- 2.99D,22.56D)
+Float :- Datatype That Allows You Store Values In Decimal But Always Refer Double 
+         Datatype instead of Float Because Double Gives 10th Decimal Values than Float
+Char :- Datatype That Allows You To Accept Values In Single Charecter Of String
+        Ex:- Char MyLetter = 'A';
+        Console.WriteLine(Myletter);
+        Char Datatype comes Under the single Qoutes
+Boolean:- Datatype that Accept The Condition Wheather Is True Or False At result Set
+Example :- bool a=True;
+           bool b=True;
+           console.WriteLine(a==b);
+OutPut :- True(Because The Values Of a And B Are Matching the Condition)
+
+Example :- bool a=True;
+           bool b= False;
+           console.WriteLine(a==b);
+Output :- false(Because the values Above Does not match Condtions);
+=========================================================================================================
+__________________
+Type Casting In C#
+__________________
+Defination :- Type Casting is When You Assign a value of one Data Type To Another Datatype
+____________________________________________________________________________________________
+
+In C# There Are Two Types Of Casting :-
+First One Is :-Implicit Casting
+Second One Is :- Explicit Casting 
+
+Defination(Implcit Casting):-implicit casting Done Automatically When You Converting 
+a Smaller Datatype Into Larger Size Of datatype 
+Example :-Char----->int--->long---->Float------>Double;
+
+Code Example :- int MyInt = 9;
+                double myDouble = MyInt; //Automatic Casting
+                console.WriteLine(MyInt); // int To Double
+                console.WriteLine(myDouble); 
+Output :- MyInt = 9 ,myDouble = 9;
+
+(Explicit Casting) Defination:- Explicit Casting Done By Manually by Placing the type in
+                                Parfenthesis() in Front Of the Value.
+Example :- double MyDouble = 9.78;
+           int MyInt = (int) MyDouble; //Manual casting Double To Int;
+           console.WriteLine(MyDouble);
+           Console.WriteLine(MyInt)
+Output :- MyDouble is 9.78 And Myint is 9.
+___________________________________________________________________________________________
+Note :- (It Is Also possible To Convert Data Types Explicitly By Using Built-In methods)
+Examples :- Convert.ToDouble,Convert.Toboolean,Convert.ToString,Convert.ToInt32.
+___________________________________________________________________________________________
+
+Ex :- int MyInt = 10;
+      double MyDouble = 9.78;
+      bool MyBool = True;
+      
+      Console.WriteLine(Convert.ToString(myInt));    // convert int to string
+      Console.WriteLine(Convert.ToDouble(myInt));    // convert int to double
+      Console.WriteLine(Convert.ToInt32(myDouble));  // convert double to int
+      Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
+(Note :- There Is No need Of type Conversion But When You Work With user input Function there Is need
+Of Type casting)
+==============================================================================================================
+C# User Input 
+The Console.ReadLine() Method Return a String 
+ThereFore You Can-Not get information From Another Datatype,Such As int
+
+Example :-   Console.WriteLine("Enter Your Age");
+             int age = Console.ReadLine();
+             Console.WriteLine("Your age is " + age);
+
+Output :- Error (Cannot Implicitly Convert type 'String' to Int)
+
+Solution :- console.WriteLine("Enter Your Age");
+            int age = Convert.ToInt32(Console.Readline());
+            Console.WriteLine("Your Age Is "+ age); 
+
+Example Using String Value to Get information From User
+
+Ex:-          Console.WriteLine("Please Enter Your username");
+              string Username = console.readLine();
+              Console.WriteLine("Your Username Is "+Username);
+
+The Above Code Run like This:- When Console Shows Massege inside The Print Method
+Then You write Your username And then Hit Enter Button And Then Your userName Will
+Read With the Console.Readline() Method And Give You the output With some Text And 
+Your User name Which Was You Type 
+
+==============================================================================================
+Addition Assignment operator
+
+int x = 5;
+x += 10;
+Console.Writeline(x);
+OutPut:- 15
+
+//Correct Method To Print Highest value Of X and y
+int x=10;
+int y=15;
+console.WriteLine(math.max(x,y));
+//Output :- 15;
+
+//Use The Correct method To Print The Square Root Of X
+
+console.Writeline(math.sqrt(64));
+
+================================================================================
+_____________________
+String Interpolation           
+____________________
+
+//use String Interpolation to Concatinate two Strings and provide modification 
+  between string values
+
+     String FirstName = "Ashish";
+     String LastName = "Dongre";
+
+ string name = $"My Full name is :{FirstName}{LastName}";
+  console.WriteLine(name);
+
+//How to Access Charecters From a String
+//Example :-
+             String MyString= "Ashish";
+             Console.WriteLine(MyString[0]);
+             Console.WriteLine(MyString[4]);
+//Output :- A
+//Output :- S
+//Index of Any String Strting Position Is 0,1,2,3,4..... and So on 
+
+
+
+// Use The Correct property To Print the Length of The String 
+
+Example :- 
+           String MyString = "Ashish";
+           Console.WriteLine(MyString.Length);
+
+
+//Use the Correct Method To Print UpperCase of Given String
+
+//Example :- 
+           String Mystring ="Ashish";
+           Console.WriteLine(MyString.ToUpper());
+//properties Of Strings :-
+1) String.Length
+2)String.ToUpper()
+3)MyString[0]
+==========================================================
+// Operators In C#
+// Defination :- Operators That Are Used To perform Operations On Variables And Values
+
+Examples :- Int x = 100+50; // x=150
+            int Sum1 = 100+50; // Here Also Sum1 = 150
+            int Sum2 = Sum1 + 250; // Here Sum2 Will Be 150+250=400
+            int Sum3 = Sum2 + Sum2; // Now Sum3 here is 800(Sum2+Sum2)
+
+// operators Are As Following 
+
+ 1) Arithmatic Operators (+,-,*,/,%,++,--)
+
+1) +(Addition) Ex:- x+Y
+2) -(Substraction) Ex:- X-Y
+3) *(Multiplication) Ex:- X*Y
+4) /(Divide) Ex:- X/Y
+5) %(Modulus) Ex:- x%y
+6) ++(increment) Ex :- X++;
+7) --(Decrement) Ex :- x--;
+
+2) Comparision operator(==,!=,>,<,>=,<==)
+
+1)== (Equal To) Ex :- (X==Y)
+2)!= (not Equal To) Ex:- (X!=Y)
+3)> (Greater Than) Ex:- (X>Y)
+4)< (less than) Ex :- (X<Y)
+5)>=(Greater Than Equal To) Ex:- (X>=Y)
+6<=(Less than Equal To) Ex:- (X<=Y)
+
+3) logical Operators 
+
+1) && (Logical And)----> Returns True If Condition satisfy
+
+2) || (Logical OR) ----> Returns True if One Of the Statement Is True
+
+3) ! (Logical Not) ----> Reverse the Result -->!(X<5 && X<10) Returns False If
+                                                              result Is True
+
+
+4) Assignment Operators
+
+1) x=5 (Assigns Values To The Variable)
+2) X+=5 (x=X+3)Addition of Values)
+
+________________
+C# Maths
+_______________
+
+1) Math.Max(5,10)
+2) Math.min(5,10)
+3) Math.Sqrt(4)
+4) Math.Abs(X,Y)
+
+    Example On Absolute:- int x=10;
+                          int Y= -10;
+                          Console.WriteLine(math.abs(Y));
+
+   Output Will be:- 10(Becz Absolute Function returs The Value In positive)
+=================================================================================
+______________
+C# Strings 
+_____________
+
+//Defination:- 1)Strings Are used to store text 
+             2)A string variable contains a collection of charecters surrounded by
+               Double Quotes
+
+//string length :- A string in c# actually an object which contain properties and methods
+                 that can perform certain operations on string 
+     // For Ex :- The Length Of The String can Be Found By the Length Property
+
+           string txt = "ABCDEFGHIJKLMNOPQURSTUVWXYZ";
+           console.Writeline(txt.length);
+
+//Some Other Properties Of Strings Are As Follows:-
+            console.Writeline(txt.ToUpper());
+            Console.WriteLine(txt.ToLower());
+            
+// How to Access The Charecters Of String
+  Defination:- You Can Access The Charecters in A string by refering to its Index Number 
+               Inside the [] Square Brackets.
+
+   //Example :- String MyName="Ashish_Dongre";
+                console.Writeline(MyName.IndexOf("_");
+
+//Another Usefull Method is Substring()
+
+Substring Method Extracts the Element From String This Method Used Together With
+IndexOf() To get The Specified Charecter Position
+ 
+// Ex:- String MyName = "Ashish Dongre";
+
+        // Extracts Location Of D
+        int charpos = MyName.IndexOf("D");
+
+        //Using Substring() Method To Extracts the Elements Of string 
+
+            String MyName = "Ashish Dongre";
+           // Console.WriteLine(MyName.IndexOf("D"));
+
+            int charpos = MyName.IndexOf("e");
+            string LastName = MyName.Substring(charpos);
+            Console.WriteLine(LastName);
+
+// Special Charecters Of Strings 
+
+  Escape Charecters          Result       Description
+ 
+   \'                         '          Single Quote
+   
+   \"                         "          Double Quote
+
+   \\                         \          Backlash
+    
+
+      
+          
+
+  
+
+                       
+             
+             
+
+
+
+
+    
+           
+ 
